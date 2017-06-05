@@ -1,0 +1,10 @@
+from fedora:21
+
+run yum install -y \
+	gcc gcc-devel make \
+	patch git zlib-devel \
+	iputils vim ncurses-devel \
+	hostname bc ccache
+
+run useradd -m tudor
+cmd su -l tudor -s /bin/bash
