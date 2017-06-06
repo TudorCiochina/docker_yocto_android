@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker build --pull --rm -t "fedora-21-rfs" --file ~/dockfile/Dockerfile-fedora-21 .
+sudo docker build --pull --rm -t "fedora-21-rootfs" --file $(pwd)/Dockerfile-fedora-21 .

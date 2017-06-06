@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
-sudo docker build --pull --rm -t "debianrfs" --file ~/share/dockfile/Dockerfile-debian-stable .
+sudo docker build --pull --rm -t "debian-stable-rootfs" --file $(pwd)/Dockerfile-debian-stable .

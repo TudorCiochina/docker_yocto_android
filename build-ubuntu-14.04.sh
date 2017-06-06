@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
-sudo docker build --pull --rm -t "ubuntu-14.04-rfs" --file ~/dockfile/Dockerfile-ubuntu-14.04 .
+sudo docker build --pull --rm -t "ubuntu-14.04-rootfs" --file $(pwd)/Dockerfile-ubuntu-14.04 .
