@@ -13,9 +13,21 @@ run apt-get install -y \
 	curl bc python python3 g++-multilib gcc-multilib lib32ncurses5-dev \
 	lib32readline-dev lib32z1-dev gawk wget git-core diffstat vim \
 	unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev \
-	xterm gcc-4.9 gcc-4.9-plugin-dev ccache \
-	openjdk-8-jdk locales
+	xterm locales ccache cpio imagemagick \
+	gcc-4.9 \
+	gcc-4.9-plugin-dev \
+	openjdk-8-jdk 
 
 run useradd -m tudor
-run su -l tudor -s /bin/bash -c 'export USER=$(whoami)'
+
+run su -l tudor -s /bin/bash -c 'mkdir ~/bin && mkdir ~/share && \
+	curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && \
+	chmod a+x ~/bin/repo && \
+	echo "export USER=$(whoami)" >> .bashrc && \
+	echo "export USE_CCACHE=1" >> .bashrc && \
+	echo "export PATH=/usr/lib/ccache:$PATH" >> .bashrc && \
+	echo "export LC_ALL=en_US.UTF-8" >> .bashrc && \
+	echo "export LANG=en_US.UTF-8" >> .bashrc && \
+	echo "export LANGUAGE=en_US.UTF-8" >> .bashrc'
+
 cmd su -l tudor -s /bin/bash

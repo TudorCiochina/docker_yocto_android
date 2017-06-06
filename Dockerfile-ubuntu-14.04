@@ -13,10 +13,13 @@ run apt-get install -y \
 	curl bc python python3 g++-multilib gcc-multilib lib32ncurses5-dev \
 	lib32readline-dev lib32z1-dev gawk wget git-core diffstat vim \
 	unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev \
-	xterm gcc-4.8 gcc-4.8-plugin-dev \
+	xterm locales ccache cpio imagemagick \
+	gcc-4.8 \
+	gcc-4.8-plugin-dev \
+	gcc-4.8-locales \
 	openjdk-7-jdk \
-	locales gcc-4.8-locales liblocales-perl util-linux-locales \
-	imagemagick ccache cpio language-pack-en-base
+	util-linux-locales \
+	language-pack-en-base
 
 run useradd -m tudor
 

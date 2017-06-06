@@ -1,10 +1,21 @@
 from fedora:21
 
 run yum install -y \
-	gcc gcc-devel make \
-	patch git zlib-devel \
-	iputils vim ncurses-devel \
-	hostname bc ccache
+	gawk make wget tar bzip2 gzip python unzip perl patch \
+     	diffutils diffstat git cpp gcc gcc-c++ glibc-devel texinfo chrpath \
+     	ccache perl-Data-Dumper perl-Text-ParseWords perl-Thread-Queue \
+	perl-bignum socat findutils which SDL-devel xterm
 
 run useradd -m tudor
+
+run su -l tudor -s /bin/bash -c 'mkdir ~/bin && mkdir ~/share && \
+	curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && \
+	chmod a+x ~/bin/repo && \
+	echo "export USER=$(whoami)" >> .bashrc && \
+	echo "export USE_CCACHE=1" >> .bashrc && \
+	echo "export PATH=/usr/lib/ccache:$PATH" >> .bashrc && \
+	echo "export LC_ALL=en_US.UTF-8" >> .bashrc && \
+	echo "export LANG=en_US.UTF-8" >> .bashrc && \
+	echo "export LANGUAGE=en_US.UTF-8" >> .bashrc'
+
 cmd su -l tudor -s /bin/bash
