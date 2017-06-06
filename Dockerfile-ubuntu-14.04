@@ -1,6 +1,7 @@
 from ubuntu:trusty
 
 #run dpkg --add-architecture i386
+
 run apt-get update
 run apt-get upgrade -y
 
@@ -15,7 +16,7 @@ run apt-get install -y \
 	xterm gcc-4.8 gcc-4.8-plugin-dev \
 	openjdk-7-jdk \
 	locales gcc-4.8-locales liblocales-perl util-linux-locales \
-	imagemagick ccache cpio
+	imagemagick ccache cpio language-pack-en-base
 
 run useradd -m tudor
 

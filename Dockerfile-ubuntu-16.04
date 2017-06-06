@@ -1,6 +1,7 @@
 from ubuntu:xenial
 
 #run dpkg --add-architecture i386
+
 run apt-get update
 run apt-get upgrade -y
 
